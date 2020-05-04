@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  lb1:
+    build: .
+    expose:
+      - "8000"
+    ports:
+      - "8081:80"
+
+  lb2:
+    build: .
+    expose:
+      - "8000"
+    ports:
+      - "8082:80"
+
