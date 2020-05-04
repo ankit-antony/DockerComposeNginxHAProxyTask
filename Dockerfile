@@ -18,7 +18,8 @@ RUN yum install -y wget openssl sed &&\
 COPY config/supervisord.conf /etc/supervisord.conf
 COPY config/nginx.conf /etc/nginx/nginx.conf
 COPY config/haproxy.cfg /etc/haproxy/haproxy.cfg
-
+COPY index.html /data/www/index.html
+VOLUME [ "/data/www" ]
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
